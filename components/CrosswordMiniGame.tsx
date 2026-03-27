@@ -44,8 +44,8 @@ export default function CrosswordMiniGame() {
   }
 
   return (
-    <div className="rounded-3xl border border-[#ead8bf]/75 bg-[#fff7eb]/55 backdrop-blur-md p-6 sm:p-10 shadow-[0_16px_38px_rgba(66,49,30,0.16)]">
-      <h2 className="font-serif text-2xl text-[#4e3d59]">
+    <div className="rounded-3xl border border-[#ead8bf]/75 bg-[#fff7eb]/55 backdrop-blur-md p-4 sm:p-10 shadow-[0_16px_38px_rgba(66,49,30,0.16)]">
+      <h2 className="font-serif text-xl sm:text-2xl text-[#4e3d59]">
         Level 1: The Crossword Codebook
       </h2>
       <p className="mt-2 text-[#5b4d63] leading-7">
@@ -68,21 +68,22 @@ export default function CrosswordMiniGame() {
                 isCorrect ? "border-emerald-300" : "border-[#ead8bf]/80",
               ].join(" ")}
             >
-              <div className="flex items-center gap-2">
-                <div className="h-6 w-6 rounded-full bg-[#f4e8d6] text-[#8f7650] text-xs grid place-items-center">
+              <div className="flex items-start gap-2">
+                <div className="shrink-0 h-6 w-6 rounded-full bg-[#f4e8d6] text-[#8f7650] text-xs grid place-items-center">
                   {idx + 1}
                 </div>
                 <div className="text-sm text-[#4e3d59]">{entry.clue}</div>
               </div>
 
-              <div className="mt-3 flex flex-wrap gap-1.5">
+              <div className="mt-3 overflow-x-auto">
+                <div className="flex w-max gap-1.5 pr-1">
                 {Array.from({ length: expected.length }).map((_, i) => {
                   const ch = chars[i] ?? "";
                   return (
                     <div
                       key={`${entry.answer}_${i}`}
                       className={[
-                        "h-9 w-9 rounded-md border text-center text-sm font-mono uppercase grid place-items-center",
+                        "h-8 w-8 sm:h-9 sm:w-9 rounded-md border text-center text-sm font-mono uppercase grid place-items-center",
                         ch
                           ? "bg-[#f8efe2] border-[#e7d3b7] text-[#4e3d59]"
                           : "bg-white border-slate-200 text-slate-300",
@@ -93,6 +94,7 @@ export default function CrosswordMiniGame() {
                     </div>
                   );
                 })}
+                </div>
               </div>
 
               <div className="mt-3 sm:max-w-sm">

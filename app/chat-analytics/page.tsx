@@ -289,9 +289,9 @@ export default function ChatAnalyticsPage() {
   }
 
   return (
-    <main className="mx-auto w-full max-w-5xl px-4 py-10">
-      <div className="rounded-3xl border border-[#ead8bf]/75 bg-[#fff7eb]/55 backdrop-blur-md p-6 sm:p-10 shadow-[0_16px_38px_rgba(66,49,30,0.16)]">
-        <h1 className="font-serif text-3xl text-[#4e3d59]">
+    <main className="mx-auto w-full max-w-5xl px-3 sm:px-4 py-8 sm:py-10">
+      <div className="rounded-3xl border border-[#ead8bf]/75 bg-[#fff7eb]/55 backdrop-blur-md p-4 sm:p-10 shadow-[0_16px_38px_rgba(66,49,30,0.16)]">
+        <h1 className="font-serif text-2xl sm:text-3xl text-[#4e3d59]">
           The Kushal × Diya Gazette
         </h1>
         <p className="mt-2 text-[#5b4d63] leading-7">
@@ -314,7 +314,7 @@ export default function ChatAnalyticsPage() {
                 key={qq.id}
                 id={`q_${qq.id}`}
                 className={[
-                  "rounded-2xl border bg-[#fffaf2]/75 p-5",
+                  "rounded-2xl border bg-[#fffaf2]/75 p-4 sm:p-5",
                   !unlockedCard
                     ? "border-slate-100 opacity-50"
                     : isCurrent
@@ -322,7 +322,7 @@ export default function ChatAnalyticsPage() {
                       : "border-[#ead8bf]/80",
                 ].join(" ")}
               >
-                <div className="flex items-start justify-between gap-4">
+                <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3 sm:gap-4">
                   <div>
                     <div className="text-xs uppercase tracking-widest text-[#8a7556]">
                       {idx + 1}. {qq.title}
@@ -342,13 +342,13 @@ export default function ChatAnalyticsPage() {
                 </div>
 
                 {unlockedCard ? (
-                  <div className="mt-4 flex gap-3">
+                  <div className="mt-4 flex flex-wrap gap-2 sm:gap-3">
                     <button
                       type="button"
                       onClick={() => choose(idx, "Kushal")}
                       disabled={Boolean(a)}
                       className={[
-                        "rounded-full px-5 py-2 text-sm border transition",
+                        "rounded-full px-4 sm:px-5 py-2 text-sm border transition",
                         a === "Kushal"
                           ? "border-[#d8b883] bg-[#faefd9] text-[#5d4732]"
                           : a
@@ -363,7 +363,7 @@ export default function ChatAnalyticsPage() {
                       onClick={() => choose(idx, "Diya")}
                       disabled={Boolean(a)}
                       className={[
-                        "rounded-full px-5 py-2 text-sm border transition",
+                        "rounded-full px-4 sm:px-5 py-2 text-sm border transition",
                         a === "Diya"
                           ? "border-[#d8b883] bg-[#faefd9] text-[#5d4732]"
                           : a
@@ -440,8 +440,8 @@ function TinyChart({
     const aLen = c * aPct;
     const bLen = c - aLen;
     return (
-      <div className="shrink-0 text-right">
-        <svg width="52" height="52" viewBox="0 0 52 52" aria-hidden="true">
+      <div className="shrink-0 text-right self-end sm:self-auto">
+        <svg className="h-[44px] w-[44px] sm:h-[52px] sm:w-[52px]" viewBox="0 0 52 52" aria-hidden="true">
           <circle cx="26" cy="26" r={r} fill="none" stroke="#e2e8f0" strokeWidth="10" />
           <circle
             cx="26"
@@ -468,7 +468,7 @@ function TinyChart({
             strokeLinecap="butt"
           />
         </svg>
-        <div className="mt-1 text-[11px] text-slate-500 leading-4">
+        <div className="mt-1 text-[10px] sm:text-[11px] text-slate-500 leading-4">
           <span style={{ color: kushalColor }}>{aLabel}</span>{" "}
           {unit ? `${aValue}${unit === "sec" ? "s" : ""}` : aValue}
           <br />

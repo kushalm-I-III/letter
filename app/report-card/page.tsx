@@ -118,11 +118,11 @@ export default function ReportCardPage() {
   }
 
   return (
-    <main className="mx-auto w-full max-w-5xl px-4 py-10">
-      <div className="rounded-3xl border border-[#ecd9be]/75 bg-[#fff7eb]/55 p-6 sm:p-10 backdrop-blur-md shadow-[0_16px_38px_rgba(66,49,30,0.16)]">
+    <main className="mx-auto w-full max-w-5xl px-3 sm:px-4 py-8 sm:py-10">
+      <div className="rounded-3xl border border-[#ecd9be]/75 bg-[#fff7eb]/55 p-4 sm:p-10 backdrop-blur-md shadow-[0_16px_38px_rgba(66,49,30,0.16)]">
         <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4">
           <div>
-            <h1 className="font-serif text-3xl text-[#4e3d59]">
+            <h1 className="font-serif text-2xl sm:text-3xl text-[#4e3d59]">
               5-Year Report Card
             </h1>
             <p className="mt-2 text-[#5b4d63]">
@@ -233,9 +233,9 @@ function GradeTable({
   onSelect: (key: string, grade: Grade) => void;
 }) {
   return (
-    <section className="rounded-3xl border border-[#ead8bf]/80 bg-[#fff8ef]/70 p-5">
+    <section className="rounded-3xl border border-[#ead8bf]/80 bg-[#fff8ef]/70 p-4 sm:p-5">
       <div className="flex items-center justify-between gap-3">
-        <h2 className="font-serif text-2xl text-[#4e3d59]">{name}</h2>
+        <h2 className="font-serif text-xl sm:text-2xl text-[#4e3d59]">{name}</h2>
         <div className="text-xs text-[#8a7556]">
           Completed:{" "}
           <b className="text-[#5b4d63]">
@@ -261,7 +261,7 @@ function GradeTable({
                   {subject.label}
                 </div>
                 <div className="col-span-12 sm:col-span-6">
-                  <div className="flex gap-2">
+                  <div className="flex flex-wrap gap-2">
                     {GRADE_ORDER.map((grade) => (
                       <button
                         key={`${subject.key}_${grade}`}

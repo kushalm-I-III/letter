@@ -77,9 +77,9 @@ export default function LoveLetterPage() {
 
   if (!passed) {
     return (
-      <main className="mx-auto w-full max-w-3xl px-4 py-16">
-        <div className="rounded-3xl border border-[#ead8bf]/75 bg-[#fff7eb]/60 backdrop-blur-md p-6 sm:p-10 shadow-[0_16px_38px_rgba(66,49,30,0.16)]">
-          <h1 className="font-serif text-4xl text-[#4e3d59]">Wait! One last Question.</h1>
+      <main className="mx-auto w-full max-w-3xl px-3 sm:px-4 py-10 sm:py-16">
+        <div className="rounded-3xl border border-[#ead8bf]/75 bg-[#fff7eb]/60 backdrop-blur-md p-4 sm:p-10 shadow-[0_16px_38px_rgba(66,49,30,0.16)]">
+          <h1 className="font-serif text-3xl sm:text-4xl text-[#4e3d59]">Wait! One last Question.</h1>
           <p className="mt-3 text-[#5b4d63]">Kya aap udna chaahate ho?</p>
           <div className="mt-5 flex flex-col sm:flex-row gap-3">
             <input
@@ -92,7 +92,7 @@ export default function LoveLetterPage() {
             <button
               type="button"
               onClick={checkCode}
-              className="rounded-xl text-white px-5 py-2 transition shadow-[0_10px_24px_rgba(69,58,38,0.30)] bg-gradient-to-r from-[#b28b55] via-[#8f7d5b] to-[#7b7fa2] hover:brightness-105"
+              className="rounded-xl text-white px-5 py-2 min-w-[110px] transition shadow-[0_10px_24px_rgba(69,58,38,0.30)] bg-gradient-to-r from-[#b28b55] via-[#8f7d5b] to-[#7b7fa2] hover:brightness-105"
             >
               Unlock
             </button>
@@ -103,7 +103,7 @@ export default function LoveLetterPage() {
   }
 
   return (
-    <main className="relative mx-auto w-full max-w-3xl px-4 py-12">
+    <main className="relative mx-auto w-full max-w-3xl px-3 sm:px-4 py-8 sm:py-12">
       <div className="pointer-events-none fixed inset-0 z-[8] overflow-hidden">
         {decorations.map((d, i) => (
           <span
@@ -121,7 +121,7 @@ export default function LoveLetterPage() {
           </span>
         ))}
       </div>
-      <div className="pointer-events-none fixed inset-0 z-[9] overflow-hidden">
+      <div className="pointer-events-none fixed inset-0 z-[9] overflow-hidden hidden sm:block">
         {floatingPhotos.map((p, i) => (
           <div
             key={`${p.src}_${i}`}
@@ -147,11 +147,11 @@ export default function LoveLetterPage() {
         ))}
       </div>
 
-      <div className="relative z-10 rounded-3xl border border-[#efdcc2]/80 bg-gradient-to-b from-[#fff7eb]/90 via-[#fffaf2]/90 to-[#fef4e8]/90 backdrop-blur p-6 sm:p-10 shadow-[0_18px_45px_rgba(84,61,39,0.18)]">
+      <div className="relative z-10 rounded-3xl border border-[#efdcc2]/80 bg-gradient-to-b from-[#fff7eb]/90 via-[#fffaf2]/90 to-[#fef4e8]/90 backdrop-blur p-4 sm:p-10 shadow-[0_18px_45px_rgba(84,61,39,0.18)]">
         <h1 className="font-script text-4xl sm:text-5xl text-[#8f7650]">
           Lady Whistledown&apos;s Letter
         </h1>
-        <div className="mt-6 space-y-4 text-[#4e3d59] leading-8 font-serif">
+        <div className="mt-6 space-y-4 text-[#4e3d59] leading-7 sm:leading-8 font-serif text-[15px] sm:text-base">
           <p>
             Dearest Gentle Reader,
             <br />
