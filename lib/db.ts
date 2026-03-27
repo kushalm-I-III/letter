@@ -1,10 +1,11 @@
 import { init } from "@instantdb/react";
 
-const appId = process.env.NEXT_PUBLIC_INSTANT_APP_ID;
+const fallbackAppId = "00000000-0000-0000-0000-000000000000";
+const appId = process.env.NEXT_PUBLIC_INSTANT_APP_ID || fallbackAppId;
 
-if (!appId) {
-  throw new Error(
-    "Missing NEXT_PUBLIC_INSTANT_APP_ID. Set it in .env.local (and Vercel env vars).",
+if (!process.env.NEXT_PUBLIC_INSTANT_APP_ID && typeof window !== "undefined") {
+  console.warn(
+    "Missing NEXT_PUBLIC_INSTANT_APP_ID. Set it in .env.local and Vercel project environment variables.",
   );
 }
 
