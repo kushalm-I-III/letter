@@ -86,8 +86,11 @@ export default function LoveLetterPage() {
               value={code}
               onChange={(e) => setCode(e.target.value)}
               className="w-full rounded-xl border border-[#e7d3b7] bg-[#fffaf2] px-3 py-2 text-[#4e3d59] outline-none focus:border-[#d8b883]"
-              placeholder="Enter secret code"
-              inputMode="numeric"
+              placeholder=""
+              type="text"
+              autoCapitalize="off"
+              autoCorrect="off"
+              spellCheck={false}
             />
             <button
               type="button"
