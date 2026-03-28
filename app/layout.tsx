@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Great_Vibes } from "next/font/google";
 import "./globals.css";
+import { GameProgressProvider } from "@/components/GameProgressProvider";
 import ProgressNav from "@/components/ProgressNav";
 
 const geistSans = Geist({
@@ -50,8 +51,10 @@ export default function RootLayout({
         />
         <div className="pointer-events-none fixed inset-0 z-0 bg-gradient-to-b from-[#fff4df]/24 via-[#fff7ea]/14 to-[#f7f0e4]/22" />
         <div className="relative z-10 min-h-screen">
-          <ProgressNav />
-          <div className="min-h-[calc(100vh-57px)] pb-12">{children}</div>
+          <GameProgressProvider>
+            <ProgressNav />
+            <div className="min-h-[calc(100vh-57px)] pb-12">{children}</div>
+          </GameProgressProvider>
         </div>
       </body>
     </html>
